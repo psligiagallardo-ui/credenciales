@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Formación y capacitaciones · Ligia Gallardo</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f3ec;--card:#fff;--tx:#26332b;--mu:#6a766d;--ac:#3f6b52;--ln:#ddd8cb}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171d19;--card:#1f2822;--tx:#e8ece6;--mu:#97a49b;--ac:#8fc4a4;--ln:#33403a}}
+:root[data-theme="dark"]{--bg:#171d19;--card:#1f2822;--tx:#e8ece6;--mu:#97a49b;--ac:#8fc4a4;--ln:#33403a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 Georgia,"Times New Roman",serif}
+main{max-width:760px;margin:0 auto;padding:40px 20px 64px}
+h1{font-size:2.3rem;margin:0 0 4px;line-height:1.15}
+h2{font-size:1.25rem;color:var(--ac);margin:44px 0 16px;border-bottom:1px solid var(--ln);padding-bottom:6px;font-weight:600}
+.sub{color:var(--mu);font-family:system-ui,sans-serif;font-size:.95rem}
+p{margin:12px 0}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:14px 16px;margin:10px 0}
+.card b,.t b{display:block}
+.card span,.t span,li span{color:var(--mu);font-family:system-ui,sans-serif;font-size:.88rem}
+.t{border-left:2px solid var(--ln);padding:0 0 18px 16px;position:relative}
+.t:before{content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--ac)}
+.t p{margin:4px 0 0;font-size:.95rem}
+details{background:var(--card);border:1px solid var(--ln);border-radius:10px;margin:10px 0;padding:0 16px}
+summary{cursor:pointer;padding:13px 0;font-weight:600;font-family:system-ui,sans-serif}
+details ul{margin:0;padding:0 0 12px;list-style:none}
+li{padding:7px 0;border-top:1px solid var(--ln);font-size:.95rem}
+li span{display:block}
+.btn{display:inline-block;margin-top:8px;padding:10px 18px;border-radius:8px;background:var(--ac);color:var(--bg);text-decoration:none;font-family:system-ui,sans-serif}
+</style>
+<style>.bar{display:flex;gap:8px;margin:0 0 14px}.bar button{font:.85rem system-ui,sans-serif;background:none;color:var(--ac);border:1px solid var(--ln);border-radius:8px;padding:6px 12px;cursor:pointer}summary small{color:var(--mu);font-weight:400;margin-left:6px}</style>
+</head><body><main>
+<h1>Formación y capacitaciones</h1>
+<div class="sub">Ligia Gallardo · Psicóloga clínica</div>
+<p>Capacitaciones y formación complementaria, organizadas por área.</p>
+<div class="bar"><button id="o">Abrir todas</button><button id="c">Cerrar todas</button></div>
+<div id="cap"></div>
+</main>
+<script>
+const C=[
+["Trauma, salud mental y psicoterapia",[
+["Supervisión Clínica en Intervenciones de Salud Mental","Organización Panamericana de la Salud",2026],
+["ACT en Trauma: Estrategias Clínicas para la Intervención en Experiencias Traumáticas","ADIPA",2026],
+["Intervención psicológica en dolor crónico no oncológico","ADIPA",2026],
+["Dolor crónico no oncológico: Introducción a la intervención psicológica","ADIPA Seminarios",2026],
+["Prevención de la autolesión y el suicidio: Empoderamiento de profesionales APS","Organización Panamericana de la Salud",2025],
+["Observo, Protejo y Aprendo: Prevención de la conducta suicida en adolescentes","Universidad de La Frontera · Fundación OPA",2025],
+["El trauma y su abordaje desde las terapias de tercera generación: Terapia Somática y Enfoque Cuerpo/Mente","ADIPA",2024],
+["Cuerpo y Trauma, enfoque de abordaje sensible","Fundación Rädika",2023],
+["Trauma Ontológico: Comprensión y abordaje de la angustia existencial","Formación Clínica Humanista Existencial",2023],
+["Técnicas avanzadas para el trauma complejo","Centro de Estudios Sistémicos Chile",2023]]],
+["Infancia, adolescencia, familias y protección especializada",[
+["Certificación en el Taller de Crianza Positiva ODISEA","Academia Fundación América por la Infancia","2026 (cursando)"],
+["Cuidado sensible al trauma en residencias, familias de acogida y adopción","Fundación América por la Infancia",2026],
+["Evaluación de Competencias Parentales: Escala de Parentalidad Positiva E2P 2.0","Academia Fundación América por la Infancia",2026],
+["Consumo de sustancias en la adolescencia y juventud","SENDA",2026],
+["Desarrollo socioemocional y lenguaje cotidiano","Fundación América por la Infancia",2026],
+["Terapia Familiar y Nutrición Relacional: El modelo de J. L. Linares","Fundación América por la Infancia",2026],
+["Crianza y Apego Protector: Buen Trato y Protección de Derechos","ADIPA",2026],
+["Habilidades Preventivas Parentales","SENDA",2026],
+["Aspectos esenciales de los Derechos de la Infancia","UNICEF Ágora",2026],
+["Intervención efectiva en casos de abuso sexual en niñez y adolescencia","UNICEF Ágora",2026],
+["Intervenciones en bullying, cutting, ciberacoso y adicción a redes sociales","UNICEF Ágora",2026],
+["Abordaje afirmativo de infancia y adolescencia trans e identidades no binarias","Centro de Estudios Sistémicos Chile",2024],
+["Intervención Social con Enfoque de Derechos","ACHNU",2018]]],
+["Terapia familiar sistémica y modelos relacionales",[
+["Técnicas y Estrategias de la Terapia de Aceptación y Compromiso (ACT)","ADIPA",2026],
+["Modelo de Comunicación No Violenta y Ecología de las Relaciones","Escuela Quintaesencia",2026],
+["Formación en Terapia Situada Feminista","Escuela Casa Mundanas","2023–2024"],
+["Cultura e identidad, su impacto en la relación terapéutica","Instituto Chileno de Terapia Familiar · Ackerman Institute for the Family",2017],
+["Estadía de Perfeccionamiento en Clínica Sistémica Relacional","Clínica Psicológica Universidad Diego Portales",2017]]],
+["Consumo problemático, reinserción social e intervención familiar",[
+["Abordaje preventivo de consumo desde una perspectiva intercultural","SENDA",2026],
+["Enfoques y prácticas basadas en la evidencia para la prevención del consumo de drogas","SENDA",2026],
+["Tratamiento de consumo problemático con adolescentes y jóvenes del Sistema Penal (Ley 20.084)","SENDA",2026],
+["Marco para la Integración Social","SENDA",2026],
+["Detección, Intervenciones Breves y Referencia Asistida en alcohol y drogas (DIR)","SENDA",2026],
+["Actualización en Entrevista Motivacional","SENDA",2026],
+["Fenómenos Emergentes sobre Drogas","SENDA",2026],
+["Capacitación en Entrevista Motivacional","SENDA RM",2018]]],
+["Salud mental comunitaria, derechos humanos, género y diversidad",[
+["Modelo de Atención Integral de Salud Familiar y Comunitaria","Organización Panamericana de la Salud",2025],
+["Certificación Guía de Buen Trato, Respeto a la Identidad y Expresión de Género en la Atención de Servicios Públicos","Ministerio Secretaría General de Gobierno",2025],
+["Estrategias para el Acompañamiento a Hitos LGBTQIANB+","Centro de Estudios Sistémicos Chile",2024],
+["La Determinación Social de la Salud","Escuela de Salud Pública UFRO",2024],
+["Herramientas para el diseño y la formulación de proyectos","Teleduc UC · SENCE",2022],
+["Fundamentos para el trabajo con mujeres que han sobrevivido al abuso: Perspectiva Narrativa","PRANAS Chile",2021],
+["Abordaje de la violencia contra las mujeres desde un enfoque de género y derechos humanos","SERNAMEG · Universidad de Concepción",2020]]],
+["Herramientas integrativas, ecopsicología y naturaleza",[
+["Diplomado en Medicina Tradicional China y Artes Internas Taoístas","Escuela Neidan","2025 (cursando)"],
+["Salud Mental, Entornos Naturales y Bienestar: de la evidencia a la intervención","ADIPA Seminarios",2026],
+["Permacultura Urbana Popular","Fundación Permea ONG",2025],
+["Inteligencia Emocional en Actividades Basadas en la Naturaleza","Forest Therapy Hub",2025],
+["Formación Terapeuta Ecosocial","Fundación Rebrota",2024]]],
+["Duelo y procesos de pérdida",[
+["Acompañamiento Profesional del Duelo Animal: Consideraciones Éticas y Estrategias Clínicas","Clínica de Duelo",2025],
+["Abordaje Clínico del Proceso de Duelo por Fallecimiento","Formación Clínica de Duelo",2023]]]];
+
+document.getElementById("cap").innerHTML=C.map(a=>`<details><summary>${a[0]}<small>(${a[1].length})</small></summary><ul>${a[1].map(c=>`<li>${c[0]}<span>${c[1]} · ${c[2]}</span></li>`).join("")}</ul></details>`).join("");
+const d=()=>document.querySelectorAll("details");
+o.onclick=()=>d().forEach(x=>x.open=true);c.onclick=()=>d().forEach(x=>x.open=false);
+</script></body></html>
